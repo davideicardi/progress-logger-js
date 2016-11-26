@@ -2,8 +2,10 @@
   "name": "progress-logger-js",
   "version": "0.1.0",
   "description": "Node.js module for logging progress information and statistics about long-lasting activities",
-  "main": "index.js",
+  "main": "build/index",
+  "typings": "build/index",
   "scripts": {
+    "develop":"tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/davideicardi/progress-logger-js/issues"
   },
-  "homepage": "https://github.com/davideicardi/progress-logger-js#readme"
+  "homepage": "https://github.com/davideicardi/progress-logger-js#readme",
+  "engines" : { "node" : ">=6.9.1" }
 }

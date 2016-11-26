@@ -1,7 +1,5 @@
 {
     "compilerOptions": {
-        "outDir": "build",
-        "rootDir": ".",
         "target": "es6",
         "module": "commonjs",
         "moduleResolution": "node",
@@ -9,13 +7,14 @@
         "jsx": "react",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "declaration": false,
+        "declaration": true,
         "noImplicitAny": false,
         "noImplicitUseStrict": false,
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "build"
     },
     "exclude": [
         "node_modules",

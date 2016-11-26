@@ -1,6 +1,6 @@
 declare function require(name: string): any;
-const ProgressLogger = require("../../index.js");
 
+import {ProgressLogger} from "../index"
 import {sleep} from "./sleep"
 
 async function doWork(): Promise<void>{
@@ -15,7 +15,7 @@ async function doWork(): Promise<void>{
     progress.increment()
     await sleep(200);
   }
-	
+
   progress.end()
 
 	console.log(progress.stats())
