@@ -1,1 +1,1 @@
-export {ProgressLogger} from "./src/ProgressLogger"
+export * from "./src/ProgressLogger"
