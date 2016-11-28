@@ -1,6 +1,6 @@
 {
   "name": "progress-logger-js",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Node.js module for logging progress information and statistics about long-lasting activities",
   "main": "build/index",
   "typings": "build/index",
