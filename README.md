@@ -10,11 +10,11 @@ Installation:
 
 usage:
 
-    const ProgressLogger = require("progress-logger-js");
+    const ProgressLogger = require("progress-logger-js").ProgressLogger;
 
-or for typescript:
+usage for typescript:
 
-    import ProgressLogger from "progress-logger-js"
+    import {ProgressLogger} from "progress-logger-js"
 
 
 Consider the following fake long-lasting process:

@@ -1,4 +1,3 @@
 "use strict";
-const ProgressLogger_1 = require("./src/ProgressLogger");
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ProgressLogger_1.ProgressLogger;
+var ProgressLogger_1 = require("./src/ProgressLogger");
+exports.ProgressLogger = ProgressLogger_1.ProgressLogger;

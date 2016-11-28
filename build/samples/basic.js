@@ -11,7 +11,7 @@ const index_1 = require("../index");
 const sleep_1 = require("./sleep");
 function doWork() {
     return __awaiter(this, void 0, void 0, function* () {
-        let progress = new index_1.default();
+        let progress = new index_1.ProgressLogger();
         for (var i = 0; i < 100; i++) {
             progress.increment();
             yield sleep_1.sleep(200);
