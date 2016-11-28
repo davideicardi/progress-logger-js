@@ -8,7 +8,13 @@ Installation:
 
     npm install progress-logger-js --save
 
+usage:
+
     const ProgressLogger = require("progress-logger-js");
+
+or for typescript:
+
+    import ProgressLogger from "progress-logger-js"
 
 
 Consider the following fake long-lasting process:

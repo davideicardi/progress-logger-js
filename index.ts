@@ -1,1 +1,3 @@
-export * from "./src/ProgressLogger"
+import {ProgressLogger} from "./src/ProgressLogger"
+
+export default ProgressLogger;

@@ -1,6 +1,6 @@
 declare function require(name: string): any;
 
-import {ProgressLogger} from "../index"
+import ProgressLogger from "../index"
 import {sleep} from "./sleep"
 
 async function doWork(): Promise<void>{

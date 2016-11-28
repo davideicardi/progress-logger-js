@@ -1,5 +1,4 @@
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(require("./src/ProgressLogger"));
+const ProgressLogger_1 = require("./src/ProgressLogger");
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ProgressLogger_1.ProgressLogger;
