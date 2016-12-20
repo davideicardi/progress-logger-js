@@ -44,12 +44,6 @@ export class ProgressLogger {
 		this.log(`started at ${new Date().toISOString()}`);
 	}
 
-	private log(msg: string){
-		this.lastLogTime = new Date();
-		this.lastLogItems = this.items();
-		this.options.logger.log(`${this.options.label} ${msg}`);
-	}
-
 	increment(error : Error = null, incValue : number = 1) : ProgressLogger{
 		if (error){
 			this.errorItems += incValue;
@@ -57,7 +51,7 @@ export class ProgressLogger {
 		}
 		else
 			this.successItems += incValue;
-		
+
 		let elapsed = this.elapsedFromLastLog();
 
 		if (elapsed >= this.options.logInterval
@@ -134,7 +128,6 @@ export class ProgressLogger {
 		return this.statistics;
 	}
 
-	
 	private lastRate(elapsed : number) {
 		return (this.items() - this.lastLogItems) / (elapsed / 1000);
 	}
@@ -149,5 +142,11 @@ export class ProgressLogger {
 
 	private round2(n : number) : number {
 		return Math.round(n * 100) / 100
+	}
+
+	private log(msg: string){
+		this.lastLogTime = new Date();
+		this.lastLogItems = this.items();
+		this.options.logger.log(`${this.options.label} ${msg}`);
 	}
 }

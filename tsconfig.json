@@ -22,7 +22,7 @@
         "typings/browser",
         "typings/browser.d.ts"
     ],
-    "compileOnSave": false,
+    "compileOnSave": true,
     "buildOnSave": false,
     "atom": {
         "rewriteTsconfig": false

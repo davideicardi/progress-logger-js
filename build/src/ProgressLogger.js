@@ -22,11 +22,6 @@ class ProgressLogger {
         this.options = Object.assign(this.options, options);
         this.log(`started at ${new Date().toISOString()}`);
     }
-    log(msg) {
-        this.lastLogTime = new Date();
-        this.lastLogItems = this.items();
-        this.options.logger.log(`${this.options.label} ${msg}`);
-    }
     increment(error = null, incValue = 1) {
         if (error) {
             this.errorItems += incValue;
@@ -104,6 +99,11 @@ class ProgressLogger {
     }
     round2(n) {
         return Math.round(n * 100) / 100;
+    }
+    log(msg) {
+        this.lastLogTime = new Date();
+        this.lastLogItems = this.items();
+        this.options.logger.log(`${this.options.label} ${msg}`);
     }
 }
 exports.ProgressLogger = ProgressLogger;

@@ -28,7 +28,6 @@ export declare class ProgressLogger {
     private statistics;
     private errors;
     constructor(options?: ProgressLoggerOptions);
-    private log(msg);
     increment(error?: Error, incValue?: number): ProgressLogger;
     incrementPromise(incPromise: Promise<void>): Promise<void>;
     percentage(): number;
@@ -38,4 +37,5 @@ export declare class ProgressLogger {
     private lastRate(elapsed);
     private elapsedFromLastLog();
     private round2(n);
+    private log(msg);
 }
