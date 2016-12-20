@@ -2,7 +2,7 @@
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator.throw(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
         function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments)).next());
     });
@@ -17,8 +17,11 @@ function doWork() {
             count: 100
         });
         for (var i = 0; i < 100; i++) {
-            progress.increment();
             yield sleep_1.sleep(200);
+            if (Math.random() > 0.8)
+                progress.increment(new Error("some error"));
+            else
+                progress.increment();
         }
         progress.end();
         console.log(progress.stats());

@@ -9,12 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const index_1 = require("../index");
 const sleep_1 = require("./sleep");
+function doWorkItem() {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield sleep_1.sleep(200);
+        if (Math.random() > 0.8)
+            throw new Error("some error");
+    });
+}
 function doWork() {
     return __awaiter(this, void 0, void 0, function* () {
         let progress = new index_1.ProgressLogger();
         for (var i = 0; i < 100; i++) {
-            yield sleep_1.sleep(200);
-            progress.increment();
+            yield progress.incrementPromise(doWorkItem());
         }
         progress.end();
         console.log(progress.stats());

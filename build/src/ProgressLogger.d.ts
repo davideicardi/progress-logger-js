@@ -5,7 +5,7 @@ export interface ProgressLoggerOptions {
     logInterval?: number;
 }
 export interface ProgressLoggerWriter {
-    log(msg: string): any;
+    log(msg: string): void;
 }
 export interface ProgressLoggerStatistics {
     label: string;
@@ -14,21 +14,28 @@ export interface ProgressLoggerStatistics {
     elapsed: number;
     avg: number;
     rate: number;
-    totals: number;
+    count: number;
+    success: number;
+    errors: string[];
 }
 export declare class ProgressLogger {
     options: ProgressLoggerOptions;
-    value: number;
-    startTime: Date;
-    lastLogTime: Date;
-    lastLogValue: number;
-    statistics: ProgressLoggerStatistics;
+    private successItems;
+    private errorItems;
+    private startTime;
+    private lastLogTime;
+    private lastLogItems;
+    private statistics;
+    private errors;
     constructor(options?: ProgressLoggerOptions);
     private log(msg);
-    increment(incValue?: number): ProgressLogger;
+    increment(error?: Error, incValue?: number): ProgressLogger;
+    incrementPromise(incPromise: Promise<void>): Promise<void>;
     percentage(): number;
-    private lastRate(elapsed);
-    private elapsedFromLastLog();
+    items(): number;
     end(): ProgressLogger;
     stats(): ProgressLoggerStatistics;
+    private lastRate(elapsed);
+    private elapsedFromLastLog();
+    private round2(n);
 }

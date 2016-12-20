@@ -8,8 +8,9 @@ async function doWork(): Promise<void>{
 	let progress = new ProgressLogger();
 
   for (var i = 0; i < 100; i++){
-    progress.increment()
     await sleep(200);
+
+    progress.increment()
   }
 
   progress.end()

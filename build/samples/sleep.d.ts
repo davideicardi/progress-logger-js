@@ -1,1 +1,1 @@
-export declare function sleep(milliseconds: any): Promise<{}>;
+export declare function sleep(milliseconds: number): Promise<{}>;

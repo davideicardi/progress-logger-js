@@ -60,12 +60,35 @@ In this case output will be:
     my-label ... 100.00% (100 of 100, 5.0/sec)
     my-label completed (100) in 20.0 seconds (5.0/sec)
 
-Some more statistics are also available using `ProgressLogger.stats` method:
 
-    { label: 'Processing',
+## Statistics
+
+Some more statistics are also available using `progressLogger.stats` method:
+
+    { label: 'my-label',
       start: 2016-11-16T00:24:49.317Z,
       end: 2016-11-16T00:25:09.359Z,
       elapsed: 20042,
       avg: 200.42,
-      rate: 4.989522003792036,
-      totals: 100 }
+      rate: 4.98,
+      count: 100,
+      success: 1,
+      errors : [] }
+
+## Handling promises
+
+To handle the progress increment of a `Promise` just use `progressLogger.incrementPromise` method:
+
+    progress.incrementPromise(yourPromise);
+
+This will automatically catch errors.
+
+## Handling errors
+
+To log errors you can use:
+
+    progress.increment(err);
+
+or passing a `Promise`:
+
+    progress.incrementPromise(yourPromise);
