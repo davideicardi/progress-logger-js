@@ -34,8 +34,8 @@ export declare class ProgressLogger {
     items(): number;
     end(): ProgressLogger;
     stats(): ProgressLoggerStatistics;
-    private lastRate(elapsed);
-    private elapsedFromLastLog();
-    private round2(n);
-    private log(msg);
+    private lastRate;
+    private elapsedFromLastLog;
+    private round2;
+    private log;
 }

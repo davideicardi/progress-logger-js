@@ -5,6 +5,7 @@
   "main": "build/index",
   "typings": "build/index",
   "scripts": {
+    "build": "tsc",
     "develop": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +25,8 @@
   "homepage": "https://github.com/davideicardi/progress-logger-js#readme",
   "engines": {
     "node": ">=6.9.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.6.3"
   }
 }

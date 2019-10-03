@@ -12,7 +12,7 @@ usage:
 
     const ProgressLogger = require("progress-logger-js").ProgressLogger;
 
-usage for typescript:
+usage with TypeScript:
 
     import {ProgressLogger} from "progress-logger-js"
 
@@ -74,6 +74,8 @@ Some more statistics are also available using `progressLogger.stats` method:
       count: 100,
       success: 1,
       errors : [] }
+
+NOTE: `avg` is simply calculated using `elapsed/count`, if you are running steps in parallel this metric is not correct.
 
 ## Handling promises
 

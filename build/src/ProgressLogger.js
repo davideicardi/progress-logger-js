@@ -1,12 +1,14 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments)).next());
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 class ProgressLogger {
     constructor(options = null) {
         this.options = {
@@ -70,7 +72,6 @@ class ProgressLogger {
         let elapsedSecs = elapsed / 1000;
         const itemsCount = this.items();
         let rateAtSeconds = this.round2(itemsCount / (elapsedSecs || 1));
-        let errorsStatus = this.errorItems > 0 ? `, ${this.errorItems} errors` : "";
         this.log(`completed (${this.successItems} success, ${this.errorItems} errors) in ${elapsedSecs.toFixed(1)} seconds (${rateAtSeconds}/sec)`);
         this.statistics = {
             label: this.options.label,

@@ -105,7 +105,6 @@ export class ProgressLogger {
 		const itemsCount = this.items();
 
 		let rateAtSeconds = this.round2(itemsCount / (elapsedSecs || 1));
-		let errorsStatus = this.errorItems > 0 ? `, ${this.errorItems} errors` : "";
 
 		this.log(`completed (${this.successItems} success, ${this.errorItems} errors) in ${elapsedSecs.toFixed(1)} seconds (${rateAtSeconds}/sec)`);
 
